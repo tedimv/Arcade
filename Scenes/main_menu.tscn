@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0j0m4dnca8fq"]
+
+[ext_resource type="Texture2D" uid="uid://c8nquvpgutqtt" path="res://Assets/MainMenu/background.jpg" id="1_802xk"]
+[ext_resource type="PackedScene" uid="uid://dfhodplflnae6" path="res://Components/button.tscn" id="2_s17r5"]
+
+[sub_resource type="SystemFont" id="SystemFont_20rxb"]
+font_names = PackedStringArray("Impact")
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.600556)
+texture = ExtResource("1_802xk")
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 85
+
+[node name="PaddingTop" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_20rxb")
+theme_override_font_sizes/font_size = 80
+text = "The Arcade"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ButtonGallery" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_s17r5")]
+layout_mode = 2
+text = "Gallery"
+
+[node name="ButtonQuit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_s17r5")]
+layout_mode = 2
+text = "Quit"
