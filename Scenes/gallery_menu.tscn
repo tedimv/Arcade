@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://vcxuems41o1d"]
+
+[ext_resource type="PackedScene" uid="uid://ci8ltcn28rmje" path="res://Scenes/base_menu.tscn" id="1_flt4w"]
+[ext_resource type="Script" path="res://Scenes/gallery_menu.gd" id="1_imgjl"]
+[ext_resource type="PackedScene" uid="uid://dfhodplflnae6" path="res://Components/button.tscn" id="2_p38k4"]
+[ext_resource type="Texture2D" uid="uid://dt1jpaneqtqd7" path="res://icon.svg" id="3_uaqk7"]
+
+[node name="GalleryMenu" type="Node2D"]
+script = ExtResource("1_imgjl")
+
+[node name="MenuBase" parent="." instance=ExtResource("1_flt4w")]
+
+[node name="BackBtn" parent="." instance=ExtResource("2_p38k4")]
+offset_left = 499.0
+offset_top = 299.0
+offset_right = 649.0
+offset_bottom = 331.0
+text = "Back"
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+offset_left = 25.0
+offset_top = 367.0
+offset_right = 1127.0
+offset_bottom = 607.0
+
+[node name="ItemList" type="ItemList" parent="ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+select_mode = 1
+auto_height = true
+item_count = 6
+same_column_width = true
+icon_scale = 0.45
+item_0/text = "Vampire survivor"
+item_0/icon = ExtResource("3_uaqk7")
+item_1/text = "Tetris"
+item_1/icon = ExtResource("3_uaqk7")
+item_2/text = "Filler #1"
+item_2/icon = ExtResource("3_uaqk7")
+item_3/text = "Filler #2"
+item_3/icon = ExtResource("3_uaqk7")
+item_4/text = "Filler #3"
+item_4/icon = ExtResource("3_uaqk7")
+item_5/text = "Filler #4"
+item_5/icon = ExtResource("3_uaqk7")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
